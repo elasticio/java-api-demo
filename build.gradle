@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'java-library-distribution'
+
+group = 'io.elastic'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile "io.elastic:java-api:0.0.1-SNAPSHOT"
+    compile "com.google.code.gson:gson:2.2.4"
+}
+
+uploadArchives {
+    repositories {
+        mavenLocal()
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
