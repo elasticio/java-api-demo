@@ -13,6 +13,6 @@ public class ErroneousComponent extends Component {
     @Override
     public void execute(ExecutionParameters parameters) {
 
-        getEventEmitter().emitException(new IllegalStateException("Ouch"));
+        throw new IllegalStateException("Ouch");
     }
 }

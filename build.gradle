@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile "io.elastic:java-api:0.0.2-SNAPSHOT"
+    compile "io.elastic:java-api:0.0.6-SNAPSHOT"
     compile "com.google.code.gson:gson:2.2.4"
 }
 
