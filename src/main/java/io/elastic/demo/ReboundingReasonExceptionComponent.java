@@ -4,15 +4,15 @@ import io.elastic.api.Component;
 import io.elastic.api.EventEmitter;
 import io.elastic.api.ExecutionParameters;
 
-public class ErroneousComponent extends Component {
+public class ReboundingReasonExceptionComponent extends Component{
 
-    public ErroneousComponent(EventEmitter eventEmitter) {
+    public ReboundingReasonExceptionComponent(EventEmitter eventEmitter) {
         super(eventEmitter);
     }
 
     @Override
     public void execute(ExecutionParameters parameters) {
-
-        throw new RuntimeException("Ouch!");
+        this.getEventEmitter().emitRebound(new RuntimeException("Rebound"));
     }
+
 }
