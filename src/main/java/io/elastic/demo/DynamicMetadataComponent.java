@@ -1,17 +1,10 @@
-package io.elastic.api.demo;
+package io.elastic.demo;
+
+import io.elastic.api.DynamicMetadataProvider;
 
 import com.google.gson.JsonObject;
 
-import io.elastic.api.Component;
-import io.elastic.api.DynamicMetadataProvider;
-import io.elastic.api.EventEmitter;
-import io.elastic.api.ExecutionParameters;
-
-public class DynamicMetadataComponent extends Component implements DynamicMetadataProvider {
-
-	public DynamicMetadataComponent(EventEmitter eventEmitter) {
-		super(eventEmitter);
-	}
+public class DynamicMetadataComponent implements DynamicMetadataProvider {
 
 	@Override
 	public JsonObject getMetaModel(JsonObject configuration) {
@@ -21,12 +14,6 @@ public class DynamicMetadataComponent extends Component implements DynamicMetada
 		metaModel.addProperty("property", "value");
 		
 		return metaModel;
-	}
-
-	@Override
-	public void execute(ExecutionParameters parameters) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
